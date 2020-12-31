@@ -67,14 +67,29 @@ extension MusicCollectionViewController: UICollectionViewDataSource, UICollectio
     
     
     
-    
-    
-    
-   /* //헤더뷰 어떻게 표시할까?
+    //헤더뷰 어떻게 표시할까?
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            guard let item = trackManager.todaysTrack else {
+                return UICollectionReusableView()
+            }
+            
+            guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "TrackCollectionReusableView", for: indexPath) as? TrackCollectionReusableView else{
+                return UICollectionReusableView()
+            }
+            
+            header.update(item: item)
+            return UICollectionReusableView()
+            
+            
+        default:
+            return UICollectionReusableView()
+        }
+        
        
-    } */
+    } 
     
      
     // 아이템 클릭시에 어떻게 할까?
