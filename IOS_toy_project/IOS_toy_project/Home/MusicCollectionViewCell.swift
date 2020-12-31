@@ -20,5 +20,13 @@ class MusicCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    //곡 정보 넣어주기
+    func updateUI(item: Track?) {
+        guard let track = item else { return }
+        thumbImage.image = track.artwork
+        title.text = track.title
+        singer.text = track.artist
+    }
 
 }
