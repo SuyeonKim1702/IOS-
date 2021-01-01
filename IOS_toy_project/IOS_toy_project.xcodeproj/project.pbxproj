@@ -43,6 +43,9 @@
 		D6169918259DBBBC00816301 /* TrackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6169915259DBBBC00816301 /* TrackManager.swift */; };
 		D6169919259DBBBC00816301 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6169916259DBBBC00816301 /* Track.swift */; };
 		D6169921259E3C1400816301 /* TrackCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6169920259E3C1400816301 /* TrackCollectionReusableView.swift */; };
+		D6169927259EF1B900816301 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6169926259EF1B900816301 /* PlayerViewController.swift */; };
+		D6169930259EF1D000816301 /* Player.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D616992F259EF1D000816301 /* Player.storyboard */; };
+		D6169938259EF82800816301 /* SimplePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6169937259EF82800816301 /* SimplePlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +108,9 @@
 		D6169915259DBBBC00816301 /* TrackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrackManager.swift; path = "../../../../../../Downloads/올인원패키지-ios앱개발-강의자료-ch11-15/CH12 애플뮤직st 음악앱/final/AppleMusicStApp/AppleMusicStApp/Track/TrackManager.swift"; sourceTree = "<group>"; };
 		D6169916259DBBBC00816301 /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Track.swift; path = "../../../../../../Downloads/올인원패키지-ios앱개발-강의자료-ch11-15/CH12 애플뮤직st 음악앱/final/AppleMusicStApp/AppleMusicStApp/Track/Track.swift"; sourceTree = "<group>"; };
 		D6169920259E3C1400816301 /* TrackCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCollectionReusableView.swift; sourceTree = "<group>"; };
+		D6169926259EF1B900816301 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		D616992F259EF1D000816301 /* Player.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Player.storyboard; sourceTree = "<group>"; };
+		D6169937259EF82800816301 /* SimplePlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SimplePlayer.swift; path = "../../../../../../Downloads/올인원패키지-ios앱개발-강의자료-ch11-15/CH12 애플뮤직st 음악앱/starter/AppleMusicStApp/AppleMusicStApp/Player/SimplePlayer.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +161,7 @@
 		D616986C259CBB3500816301 /* IOS_toy_project */ = {
 			isa = PBXGroup;
 			children = (
+				D6169925259EF17400816301 /* Player */,
 				D61698E4259DBB7700816301 /* Resources */,
 				D61698CC259DB6DA00816301 /* Track */,
 				D61698C5259DB55B00816301 /* Home */,
@@ -234,6 +241,16 @@
 				D61698F4259DBB9200816301 /* when the leaves start falling.mp3 */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		D6169925259EF17400816301 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				D6169937259EF82800816301 /* SimplePlayer.swift */,
+				D6169926259EF1B900816301 /* PlayerViewController.swift */,
+				D616992F259EF1D000816301 /* Player.storyboard */,
+			);
+			path = Player;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,6 +376,7 @@
 				D61698FF259DBB9200816301 /* night calls.mp3 in Resources */,
 				D61698FB259DBB9200816301 /* always you.mp3 in Resources */,
 				D6169910259DBB9200816301 /* tranquility.mp3 in Resources */,
+				D6169930259EF1D000816301 /* Player.storyboard in Resources */,
 				D6169904259DBB9200816301 /* im trying to find myself.mp3 in Resources */,
 				D616990F259DBB9200816301 /* Bike Rides On The Block.mp3 in Resources */,
 				D6169875259CBB3500816301 /* Main.storyboard in Resources */,
@@ -393,7 +411,9 @@
 				D6169921259E3C1400816301 /* TrackCollectionReusableView.swift in Sources */,
 				D6169918259DBBBC00816301 /* TrackManager.swift in Sources */,
 				D616986E259CBB3500816301 /* AppDelegate.swift in Sources */,
+				D6169938259EF82800816301 /* SimplePlayer.swift in Sources */,
 				D6169917259DBBBC00816301 /* Extension+AVPlayerItem.swift in Sources */,
+				D6169927259EF1B900816301 /* PlayerViewController.swift in Sources */,
 				D61698A1259CC5FC00816301 /* HomeViewController.swift in Sources */,
 				D6169870259CBB3500816301 /* SceneDelegate.swift in Sources */,
 				D6169919259DBBBC00816301 /* Track.swift in Sources */,

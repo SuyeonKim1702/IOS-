@@ -56,7 +56,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m2d-2b-fNU">
+                                        <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m2d-2b-fNU">
                                             <rect key="frame" x="28" y="82" width="358" height="200"/>
                                             <connections>
                                                 <action selector="cardTapped:" destination="Emb-Px-zqC" eventType="touchUpInside" id="Jqi-wa-pDm"/>

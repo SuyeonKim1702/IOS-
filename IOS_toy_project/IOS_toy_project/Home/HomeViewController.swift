@@ -22,7 +22,6 @@ class MusicCollectionViewController: UIViewController {
          collectionView.delegate = self
          collectionView.dataSource = self
          collectionView.register(UINib(nibName: "MusicCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "MusicCollectionViewCell")
-     
         
     }
 }
@@ -66,22 +65,43 @@ extension MusicCollectionViewController: UICollectionViewDataSource, UICollectio
     }
     
     
-    
-    //헤더뷰 어떻게 표시할까?
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+   //헤더뷰 어떻게 표시할까
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView{
         
         switch kind {
         case UICollectionView.elementKindSectionHeader:
+            
             guard let item = trackManager.todaysTrack else {
                 return UICollectionReusableView()
             }
-            
+        
             guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "TrackCollectionReusableView", for: indexPath) as? TrackCollectionReusableView else{
                 return UICollectionReusableView()
             }
-            
             header.update(item: item)
-            return UICollectionReusableView()
+            header.tapHandler = { item -> Void in
+                
+                //파일 정보 가져오기
+                let songInfo = item
+                
+                
+                let playerStoryboard = UIStoryboard.init(name: "Player", bundle: nil)
+                // 해당 스토리보드에서 oo 뷰컨트롤러를 찾을 것이다.
+                guard let playerVC = playerStoryboard.instantiateViewController(identifier: "PlayerViewController") as? PlayerViewController else { return }
+
+                
+                playerVC.simplePlayer.replaceCurrentItem(with: songInfo)
+                
+                self.present(playerVC, animated: true, completion: nil)
+                
+            
+                
+                
+               
+            }
+            return header
+            
+        
             
             
         default:
@@ -89,11 +109,28 @@ extension MusicCollectionViewController: UICollectionViewDataSource, UICollectio
         }
         
        
-    } 
-    
+        
+        
+        
+    }
+
+
      
     // 아이템 클릭시에 어떻게 할까?
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        //파일 정보 가져오기
+        let songInfo = trackManager.tracks[indexPath.item]
+        
+        
+        let playerStoryboard = UIStoryboard.init(name: "Player", bundle: nil)
+        // 해당 스토리보드에서 oo 뷰컨트롤러를 찾을 것이다.
+        guard let playerVC = playerStoryboard.instantiateViewController(identifier: "PlayerViewController") as? PlayerViewController else { return }
+
+        
+        playerVC.simplePlayer.replaceCurrentItem(with: songInfo)
+        present(playerVC, animated: true, completion: nil)
+        
     
     }
  
