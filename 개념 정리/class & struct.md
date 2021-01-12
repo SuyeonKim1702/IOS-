@@ -1,6 +1,7 @@
 ## struct vs class 
 <br>
 둘다 프로퍼티와 함수를 가지고 데이터를 저장할 수 있다는 점에서 동일 
+<br>
 - struct
   - call by value
   - 상속 불가능
