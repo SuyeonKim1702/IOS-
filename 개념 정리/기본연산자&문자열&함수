@@ -1,0 +1,123 @@
+## 기본 연산자
+
+### 튜플
+- 여러개의 타입을 한번에 묶어서 사용할 수 있음 
+- 구조체나 클래스에서 변수만 묶어놓은 형태와 비슷
+-      var a: (String, Int) = ("hello", 8)
+       print(a.1) // 8
+
+<br>
+
+### Nil 병합 연산자(Nil-Coalescing Operator)
+: **a ?? b** 형태를 가지는 연산자 
+- 옵셔널 a를 벗겨서 nil일 경우 b를 반환한다
+- **a!= nil ? a! : b** 의 축약형
+  
+<br>
+
+### 범위 연산자
+     for i in 1...5{ }
+     for i in 1..<5{ }
+
+     var names = ["alex","brian","cindy"]
+
+     for name in names[1...] {
+       print(name)
+     }
+
+     var a = 1...5
+     var b = 1..<5
+<br>
+--------
+
+## 문자열과 문자
+<br>
+
+빈 문자열 초기화
+
+     //아래 두개는 같은 값으로 초기화됨
+     var emtpryString = ""
+     var anotherEmptyString = String() 
+
+
+문자열 배열을 string으로 바꾸기
+     
+     let catCharacters: [Character] = ["I", "LOVE", "U"]
+     let catString = String(catCharacters)
+     print(catString)
+
+문자열에서는 원소의 인덱스에 접근할 때, **숫자가 아닌 인덱스 객체**를 넣어주어야 한다
+- **n번째 원소에 접근하고 싶을 때**, **startIndex**와 **offSetBy**를 이용
+- ex)
+- 
+       let greeting = "Guten Tag!"
+       let index = greeting.index(greeting.startIndex, offsetBy: 0)
+       print(greeting[index])
+
+- 개별 원소에 접근하기 위해서는 indices 사용
+-      for i in greeting.indices{
+       print(greeting[i])
+      }
+
+
+### Set
+![ ](https://gblobscdn.gitbook.com/assets%2F-LKLx6PA5iF3Uq2IzQsf%2F-LKM6rLq40OpYV8Jv5il%2F-LKM7iM3pCfbS4h6Lq-6%2FC7EEA172-39EF-49BA-876D-CD2A72D5E2DC.png?alt=media&token=d054a78a-98bc-4085-bfdb-7405dbe5dd70)
+
+
+### Repeat-while 문 : do while문과 유사
+### Switch 문 
+- 암시적인 진행을 허용하지 않음, break나 default를 적지 않아도 해당 case문이 종료되면 switch 구문을 빠져나오게 됨 ( fallthrough 키워드를 쓰면 다음 case문 실행)
+- case의 조건으로 사용할 수 있는 것
+  - 숫자의 특정 범위 
+  - 튜플
+  - 값 바인딩
+  - where 문
+  - 혼합 case
+  - 
+        case 1..<5:
+        naturalCount = "a few"
+
+        case (_, 0):
+        print("\(somePoint) is on the x-axis")
+
+        case (0, let y):
+        print("on the y-axis with a y value of \(y)")
+
+        case let (x, y) where x == y:
+        print("(\(x), \(y)) is on the line x == y")
+
+
+## 함수
+인자 라벨 지정: 파라미터 앞에 인자 라벨을 지정해 **함수 내부**에서와 **호출 시 인자 이름**을 다르게 할 수 있다.
+
+     func greet(person: String, from hometown: String) -> String {
+    return "Hello \(person)!  Glad you could visit from \(hometown)."
+    }
+    print(greet(person: "Bill", from: "Cupertino"))
+    // Prints "Hello Bill!  Glad you could visit from Cupertino."
+
+인자 생략: 파라미터 앞에 _을 붙여서 함수 호출 시 인자 이름을 생략할 수 있다 
+
+     func someFunction(_ firstParameterName: Int, secondParameterName: Int) {
+    }
+    someFunction(1, secondParameterName: 2)
+
+
+인-아웃 파라미터 : 인자 값을 직접 변경하는 파라미터
+(c에서의 포인터와 비슷하다고 생각)
+
+    func swapTwoInts(_ a: inout Int, _ b: inout Int) {
+    let temporaryA = a
+    a = b
+    b = temporaryA
+    }
+     
+     var someInt = 3
+     var anotherInt = 107
+     swapTwoInts(&someInt, &anotherInt)
+     print("someInt is now \(someInt), and anotherInt is now \(anotherInt)")
+     // Prints "someInt is now 107, and anotherInt is now 3"
+
+-> 함수 내부에서 someInt와 anotherInt의 값을 바꿈 
+
+
