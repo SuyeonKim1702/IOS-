@@ -6,9 +6,13 @@
   - call by value(값 타입)
   - 상속 불가능
   - 손쉽게 JSON <-> Struct 변환 가능
+  - 자동 생성된 이니셜라이저를 통해 값 초기화 
+  
+          var myInfo: BasicInformation = BasicInformation(name: "suyeon", age: 24)
 - class
   - call by reference(참조 타입)
   - 상속 가능
+  - 소멸자(deinit)을 가진다 
 
 
 
